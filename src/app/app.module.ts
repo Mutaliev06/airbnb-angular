@@ -8,6 +8,11 @@ import { ContentComponent } from './components/content/content.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import { LeftColumnComponent } from './components/left-column/left-column.component';
+import { RightColumnComponent } from './components/right-column/right-column.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +20,17 @@ import { FooterComponent } from './components/footer/footer.component';
     ContentComponent,
     HeaderComponent,
     MainComponent,
-    FooterComponent
+    FooterComponent,
+    LeftColumnComponent,
+    RightColumnComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

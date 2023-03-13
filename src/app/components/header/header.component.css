@@ -1,0 +1,21 @@
+.header {
+  background-color: #660099;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 16px;
+}
+
+.header_p {
+  margin: 0;
+  display: flex;
+}
+
+.header_span {
+  color: #fafbfc;
+}
+
+.header_button {
+  color: #fafbfc;
+  background-color: inherit;
+  border: 0;
+}

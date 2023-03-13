@@ -1,0 +1,14 @@
+.footer {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #888888;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.media_button {
+  background-color: inherit;
+  border: none;
+}
