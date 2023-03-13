@@ -13,6 +13,7 @@ import {MatIconModule} from "@angular/material/icon";
 import { LeftColumnComponent } from './components/left-column/left-column.component';
 import { RightColumnComponent } from './components/right-column/right-column.component';
 import { CardComponent } from './components/card/card.component';
+import { DescriptionModalComponent } from './components/description-modal/description-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CardComponent } from './components/card/card.component';
     FooterComponent,
     LeftColumnComponent,
     RightColumnComponent,
-    CardComponent
+    CardComponent,
+    DescriptionModalComponent
   ],
   imports: [
     BrowserModule,
