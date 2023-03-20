@@ -12,3 +12,8 @@
   border-radius: 5px;
   padding: 5px 10px;
 }
+
+.card_button_a {
+  color: ivory;
+  text-decoration: none;
+}
