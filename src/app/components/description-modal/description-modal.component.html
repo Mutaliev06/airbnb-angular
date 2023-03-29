@@ -1,4 +1,31 @@
 <div class="description">
-  <h2>{{housing[0].name}}</h2>
-  <h6>{{housing[0].price}}</h6>
+  <div class="description_header">
+    <div>
+      <h2>{{housing.name}}</h2>
+      <h6>{{housing.address}}</h6>
+    </div>
+    <button class="description_button">
+      <a class="description_button_a" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
+        <mat-icon>clear</mat-icon>
+      </a>
+    </button>
+  </div>
+
+  <div class="description_foto">
+    <img src="assets/{{housing.img}}" class="description_img"/>
+  </div>
+
+  <div class="description_main">
+    <div>
+      Хозяин: {{housing.owner}}
+    </div>
+    <div class="description_forms">
+      <form>
+        <app-date-range-picker-forms></app-date-range-picker-forms>
+        <app-select-guests></app-select-guests>
+      </form>
+      <button (click)="clickForm()">Забронировать</button>
+    </div>
+  </div>
+
 </div>

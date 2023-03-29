@@ -1,4 +1,4 @@
 <div class="main">
-  <app-left-column style="width: 100%"></app-left-column>
-  <app-right-column style="width: 100%"></app-right-column>
+  <app-left-column [clickBuild]="clickId" style="width: 100%"></app-left-column>
+  <app-right-column (clickChange)="onAClicked($event)" style="width: 100%"></app-right-column>
 </div>

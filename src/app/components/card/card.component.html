@@ -1,8 +1,9 @@
-<div class="card" *ngFor="let house of housing ; let i = index;">
+<div class="card" *ngFor="let house of this.building;">
   <h4 class="name">{{house.name}}</h4>
   <p class="address">Адрес: {{house.address}}</p>
   <p class="price">Цена за ночь: {{house.price}}</p>
   <button class="card_button">
-    <a class="card_button_a" routerLink="/description/{{house.id}}" [queryParams]="house" routerLinkActive="active" ariaCurrentWhenActive="page">Подробнее</a>
+    <a class="card_button_a" routerLink="/description/{{house.id}}" routerLinkActive="active" ariaCurrentWhenActive="page">Подробнее</a>
   </button>
+  <p>BuildId: {{id}}</p>
 </div>

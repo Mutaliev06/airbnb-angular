@@ -1,0 +1,9 @@
+<mat-form-field appearance="fill">
+  <mat-label>Выберите даты</mat-label>
+  <mat-date-range-input [rangePicker]="picker">
+    <input matStartDate placeholder="Прибытие">
+    <input matEndDate placeholder="Выезд">
+  </mat-date-range-input>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>

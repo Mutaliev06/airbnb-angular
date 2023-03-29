@@ -1,8 +1,12 @@
 <div class="left-column">
-  <app-card style="
-  position: fixed;
-  height: calc(100vh - 140px);
-  width: 50%;
-  overflow: scroll;
-"></app-card>
+  <app-card
+    style="
+    position: fixed;
+    height: calc(100vh - 156px);
+    width: 50%;
+    overflow: scroll;"
+    [id]="clickBuild"
+  ></app-card>
 </div>
+
+ClickId: {{clickBuild}}

@@ -1,3 +1,7 @@
-<div class="right-column" style="height: calc(100vh - 140px);">
-
+<div class="right-column" style="height: calc(100vh - 156px);">
+  <div *ngFor="let build of building">
+    <button (click)="clickMe(build.id)" style="border: none; background-color: inherit; position: relative; color: red; width: 20px; top: {{build.positionTop}}; left: {{build.positionLeft}}">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="room"></mat-icon>
+    </button>
+  </div>
 </div>

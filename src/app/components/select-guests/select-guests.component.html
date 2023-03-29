@@ -1,0 +1,8 @@
+<mat-form-field class="ui-field" appearance="fill">
+  <mat-label>Гостей</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let guest of guestArray" [value]="guest">
+      {{guest}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

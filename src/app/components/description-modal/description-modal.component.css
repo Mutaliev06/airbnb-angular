@@ -1,0 +1,39 @@
+.description {
+  padding: 20px 80px;
+  height: calc(100vh - 180px);
+}
+
+.description_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description_foto {
+  width: 100%;
+  max-width: 1440px;
+}
+.description_img {
+  width: 30%;
+}
+
+.description_button {
+  background-color: inherit;
+  border: none;
+}
+
+.description_button_a {
+  text-decoration: none;
+}
+
+.description_main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description_forms {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+}
