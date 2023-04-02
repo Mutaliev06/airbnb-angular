@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import { BuildService, CardClass } from "../../../service";
 
@@ -9,7 +9,10 @@ import { BuildService, CardClass } from "../../../service";
 })
 export class SelectGuestsComponent implements OnInit {
   housing: CardClass[];
-  guestArray: any[];
+  guestArray: number[];
+
+  @Input()
+  guests?: number
 
   constructor(
     private buildService: BuildService,
@@ -21,8 +24,9 @@ export class SelectGuestsComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    const newBuildingArr = this.buildService.getNewBuildingArr(Number(id));
 
-    this.guestArray = Array.from({ length: newBuildingArr.guests }, (v, i) =>  i + 1);
+    if (this.guests) {
+      this.guestArray = Array.from({ length: this.guests }, (v, i) =>  i + 1);
+    }
   }
 }

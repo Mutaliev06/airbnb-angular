@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {BuildService, CardClass} from "../../../service";
 
@@ -10,22 +10,25 @@ import {BuildService, CardClass} from "../../../service";
 })
 
 export class DescriptionModalComponent implements OnInit {
-  housing: CardClass | any;
+  housing: CardClass | null;
+
+  @Input() guests?: number;
 
   constructor(
     private route: ActivatedRoute,
     private buildService: BuildService
     ) {
-    this.housing = {};
+    this.housing = null;
   }
 
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    const newBuildingArr = this.buildService.getNewBuildingArr(Number(id));
+    const newBuildingArr = this.buildService.getPinById(Number(id));
 
     if (id) {
       this.housing = newBuildingArr;
+      this.guests = this.housing?.guests
     }
   }
 

@@ -6,22 +6,8 @@ import {Build, BuildService} from "../../../service";
   templateUrl: './left-column.component.html',
   styleUrls: ['./left-column.component.css']
 })
-export class LeftColumnComponent implements OnInit{
+export class LeftColumnComponent {
 
   @Input() clickBuild?: number;
-
-  building: Build[] | any;
-
-  constructor(private buildService: BuildService) {
-    this.building = {};
-  }
-
-  ngOnInit() {
-    if (this.clickBuild !== 0) {
-      this.building = this.clickBuild && this.buildService.getBuildingFilter(String(this.clickBuild));
-      console.log(this.clickBuild)
-    }
-    this.building = this.buildService.getNewCardArr();
-  }
 
 }

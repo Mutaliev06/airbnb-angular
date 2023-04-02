@@ -86,14 +86,6 @@ export const building: Build[] = [
   }
 ];
 
-
-// export const newBuildingArr = (id: number) => building.reduce((res: any, el) => {
-//   if (el.card.find(item => item.id === id)) {
-//     res = el.card.find(item => item.id === id)
-//   }
-//   return res;
-// }, {});
-
 @Injectable({
   providedIn: 'root',
 })
@@ -103,20 +95,19 @@ export class BuildService {
 
   getBuildingFilter(buildId: string | null) { return  building.filter(build => build.id === Number(buildId))[0].card }
 
-  getNewCardArr() {
+  getAllPins() {
     return building.reduce((res: any, el, index, arr) => {
-      res[index] = el.card
+      res[index + 1] = el.card
       return res.flat();
     }, []);
   }
 
-  getNewBuildingArr(id: number) {
-    return building.reduce((res: any, el) => {
-      if (el.card.find(item => item.id === id)) {
-        res = el.card.find(item => item.id === id)
-      }
-      return res;
-    }, {});
+  getPinById(id: number) {
+    const card = building
+      .flatMap(build => build.card)
+      .find(card => card.id === id);
+
+    return card || null;
   }
 
 }

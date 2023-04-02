@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { Build, BuildService } from "../../../service";
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Build, building, BuildService, CardClass} from "../../../service";
 
 @Component({
   selector: 'app-card',
@@ -8,24 +8,19 @@ import { Build, BuildService } from "../../../service";
 })
 
 
-export class CardComponent implements OnInit{
-  building: Build[] | any;
+export class CardComponent implements OnChanges {
+  building: CardClass[];
 
   @Input()
   id?: number
 
   constructor(private buildService: BuildService) {
-    this.building = {};
+    this.building = this.buildService.getAllPins();
   }
 
-  ngOnInit() {
-
-    if (this.id) {
-      this.building = this.id && this.buildService.getBuildingFilter(String(this.id));
-    } else {
-      this.building = this.buildService.getNewCardArr();
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.id && this.id !== 0) {
+      this.building = this.buildService.getBuildingFilter(String(this.id));
     }
-
-    // this.building = this.buildService.getNewCardArr();
   }
 }
